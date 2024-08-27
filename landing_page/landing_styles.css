@@ -1,0 +1,351 @@
+
+:root{
+    --oxford-blue: #101935;
+    --tiffany-blue: #9AD4D6;
+    --azure: #F2FDFF;
+    --thisle: #DBCBD8;
+    --ultra-violet: #564787;
+}
+
+body { min-height: 100vh; width: 100vw; overflow-x: hidden; background-color: var(--azure);}
+
+main {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+h1 {
+    color: var(--oxford-blue);
+    position: absolute;
+    font-size: 3rem;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--oxford-blue);
+}
+
+header:has(nav) {
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem 2rem;
+    background-color: var(--azure);
+    border-bottom: 2px solid var(--oxford-blue);
+    
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style-type: none;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    transition: border 200ms ease-in-out;
+    display: block;
+}
+
+nav ul li a:not(.link-button):hover {
+    border-bottom: 1px solid var(--oxford-blue);
+}
+
+section > header > h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+
+a.link-button {
+    cursor: pointer;
+    padding: 1rem 2rem;
+    background-color: var(--ultra-violet);
+    color: var(--azure);
+    border-radius: 2rem;
+    transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out;
+}
+
+nav ul li a.link-button:hover {
+    transform: scale(1.01) translate(0, -1px);
+    box-shadow: 6px 8px 22px -11px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 6px 8px 22px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 8px 22px -11px rgba(0,0,0,0.75);
+}
+
+figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+section#overview {
+    display: flex;
+    align-items: center;
+}
+
+section#overview div {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+section#overview figure {
+    width: 400px;
+    height: 800px;
+    overflow: hidden;
+}
+
+section#overview figure.back {
+    rotate: 180deg;
+    width: 320px;
+    height: 640px;
+    margin-left: -10rem;
+}
+
+section#overview main{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+section#overview main h2{
+    font-size: 5rem;
+}
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+section#overview main p.feature {
+    animation-name: fade_in;
+    animation-timing-function: ease-in;
+    animation-iteration-count: forwards;
+}
+
+
+section#overview main p.feature[data-number="1"] {
+    animation-duration: 1000ms;
+    font-size: 3rem;
+}
+section#overview main p.feature[data-number="2"] {
+    animation-duration: 1500ms;
+    font-size: 2rem;
+}
+section#overview main p.feature[data-number="3"] {
+    animation-duration: 2000ms;
+    font-size: 1.5rem;
+}
+
+section#specifications{
+    position: relative;
+}
+
+section#specifications > header {
+    margin-bottom: 5rem;
+    font-size: 1.5rem;
+}
+
+section#specifications main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+section#specifications main article {
+    width: 32rem;
+    background-color: var(--azure);
+    border: 1px solid var(--thisle);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 6px 8px 22px -11px rgba(0,0,0,0.75);
+}
+section#specifications main article main{
+    padding: 0;
+    font-size: 1.2rem;
+}
+section#specifications > main > article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#specifications > main > article > figure{
+    width: 100px;
+    height: 100px;
+    position: static;
+    filter: none;
+
+    translate: 100%;
+    background-color: var(--azure);
+}
+
+section#specifications > main > article > figure > img{
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+}
+section#specifications main article h4{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+section#specifications main article:nth-child(even) {
+    margin-left: auto;
+    text-align: right;
+}
+
+section#specifications main article:nth-child(even) > figure{
+    translate: -100%;
+}
+    
+
+section#specifications figure {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    translate: 50% -50%;
+    height: 900px;
+}
+
+section#specifications figure img{
+    object-fit: cover;
+    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.75));
+}
+
+section#reviews > main{
+    padding: 3rem 0;;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+section#reviews > main > article {
+    background-color: var(--azure);
+    width: 20rem;
+    height: 25rem;
+    box-shadow: 6px 8px 22px -11px rgba(0,0,0,0.75);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--thisle);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: scale 200ms ease-in-out;
+}
+
+section#reviews > main > article:hover{
+    scale: 101%;
+}
+
+section#reviews > main > article > figure > img {
+    object-fit: cover;
+}
+
+section#reviews > main > article > figure {
+    width: 100px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--azure);
+    overflow: hidden;
+}
+
+section#reviews > main > article > aside {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+section#reviews > main > article > aside > h5 {
+    font-size: 1.3rem;
+}
+
+section#reviews > main > article > div.stars > img{
+    width: 20px;
+}
+
+section#pricing > header{
+    margin-bottom: 3rem;
+}
+section#pricing > main > article{
+    background-color: var(--azure);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--thisle);
+    box-shadow: 6px 8px 22px -11px rgba(0,0,0,0.75);
+
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section#pricing > main > article > main > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section#pricing > main > article > figure {
+    width: 300px;
+}
+
+
+section#pricing .price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+span.price{
+    font-size: 1.5rem;
+}
+
+section#pricing > main {
+    flex-direction: row;
+}
+
+
+footer {
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 2px solid var(--ultra-violet);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+footer > p {
+    width: 400px;
+    text-align: justify;
+}
+
+footer div#contact span{
+    display: block;
+    text-align: center;
+}
